@@ -1,0 +1,28 @@
+
+[helloworld]
+exten => _X.,1,NoOp(${EXTEN})
+  same => n,Playback(hello-world)
+  same => n,Hangup()
+
+
+;[helloworld]
+;exten => _100[1-9],1,Goto(helloworld-prod,${EXTEN},1)
+;                          ;Goto(context,extension,priority)
+;  same => n,Hangup()
+
+;exten => _300[1-9],1,Goto(helloworld-test,${EXTEN},1)
+;  same => n,Hangup()
+
+;exten => _X.,1,NoOp(Handler not defined for extension ${EXTEN})
+;  same => n,Hangup()
+
+;[helloworld-prod]
+;exten => _X.,1,NoOp(${EXTEN})
+;  same => n,Playback(hello-world)
+;  same => n,Hangup()
+
+;[helloworld-test]
+;exten => _X.,1,NoOp(${EXTEN})
+;  same => n,Playback(hello-world)
+;  same => n,Hangup()
+
