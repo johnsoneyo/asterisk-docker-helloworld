@@ -25,11 +25,11 @@ You are now inside the docker container. You can now run asterisk.
 
 You can use the following two predefined sip accounts to connect your softphones to asterisk.
 
-username: 3001
+```username: 3001
 password: 3001pass
 
 username: 3002
-password: 3002pass
+password: 3002pass```
 
 
 ### First Run
