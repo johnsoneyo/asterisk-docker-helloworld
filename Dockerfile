@@ -14,9 +14,8 @@ ADD ari_conf /provision/ari_conf
 RUN cat /provision/sip_conf >> /etc/asterisk/sip.conf
 RUN cat /provision/extensions_conf >> /etc/asterisk/extensions.conf
 RUN cat /provision/ari_conf > /etc/asterisk/ari.conf
-RUN echo "noload => res_pjsip.so" >> /etc/asterisk/modules.conf
+#RUN echo "noload => res_pjsip.so" >> /etc/asterisk/modules.conf
 RUN sed -i '/;enabled=yes/c\enabled=yes' /etc/asterisk/http.conf
-#RUN sed -i '/bindaddr=127.0.0.1/c\bindaddr=0.0.0.0' /etc/asterisk/http.conf
 RUN sed -i '/;bindport=8088/c\bindport=8088' /etc/asterisk/http.conf
 
 CMD ["/usr/sbin/asterisk", "-cvvvv"]
